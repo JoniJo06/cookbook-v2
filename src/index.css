@@ -1,13 +1,75 @@
+/** @format */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.jonLink {
+	display: flex;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	height: fit-content;
+	justify-content: center;
+	padding-bottom: 1em;
+	padding-top: 0em;
+}
+
+#footer {
+	text-align: center;
+	background: rgb(76, 163, 151);
+	background: -moz-linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	background: linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4ca397",endColorstr="#00d4ff",GradientType=1);
+	padding-top: 0.5em;
+}
+
+#header {
+	text-align: center;
+	background: rgb(76, 163, 151);
+	background: -moz-linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	background: linear-gradient(90deg, rgba(76, 163, 151, 1) 0%, rgba(205, 191, 20, 1) 46%, rgba(0, 212, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4ca397",endColorstr="#00d4ff",GradientType=1);
+	font-variant: small-caps;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.recipeHeader {
+	text-align: center;
+	font-variant: small-caps;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+h3 {
+	padding-top: 1em;
+}
+
+.meal {
+	width: 30vw;
+	height: 15rem;
+
+	border-radius: 10%;
+	object-fit: cover;
+}
+
+.imageContainer {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1em;
 }
