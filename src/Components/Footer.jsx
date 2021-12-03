@@ -12,7 +12,7 @@ const Footer = () => {
 	});
 	return (
 		<Container maxWidth='100%' id='footer'>
-			<h3>Created by Jonas│Martin│Mattteo</h3>
+			<h3>Created by Jonas│Martin│Mett Teo</h3>
 
 			<a className='jonLink' href='https://github.com/JoniJo06/CookBook-week6-7.git'>
 				<ColorIcon />
