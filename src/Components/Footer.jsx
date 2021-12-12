@@ -14,7 +14,7 @@ const Footer = () => {
 		<Container maxWidth='100%' id='footer'>
 			<h3>Created by Jonas│Martin│Mett Teo</h3>
 
-			<a className='jonLink' href='https://github.com/JoniJo06/CookBook-week6-7.git'>
+			<a className='jonLink' href='https://github.com/JoniJo06/'>
 				<ColorIcon />
 				JoniJo06
 			</a>
