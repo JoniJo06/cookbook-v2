@@ -10,26 +10,21 @@ import Header from "./Header";
 
 const Recipes = () => {
   const { id } = useParams();
-  const [recipes, setRecipes] = useState([]);
+  const [recipe, setRecipe] = useState([]);
   // const [ingredients, setIngredients] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(
-          `https://cdn.contentful.com/spaces/${process.env.REACT_APP_SPACE_ID}/entries?access_token=${process.env.REACT_APP_ACCESS_TOKEN}`
-        )
-        .then((res) => setRecipes(res.data.items))
+        .get(`https://kochbuch-backend.herokuapp.com/recipes/${id}`)
+        .then((res) => setRecipe(res.data))
         .catch((err) => console.error(err));
 
       setIsLoading(false);
     };
     fetchData();
   }, []);
-  const recipe = recipes.filter((el) => {
-    return el.sys.id === id;
-  });
 
   return (
     <>
@@ -38,22 +33,27 @@ const Recipes = () => {
       </header>
       {!isLoading ? (
         <Container maxWidth="100%" className="Recipes">
-          <h1 className="recipeHeader">{recipe[0].fields.title}</h1>
+          <h1 className="recipeHeader">{recipe.title}</h1>
           <div className="imageContainer">
-            <img className="meal" src={recipe[0].fields.picture1} alt="#" />
-            {recipe[0].fields.picture2 && (
-              <img className="meal" src={recipe[0].fields.picture2} alt="#" />
+            <img className="meal" src={recipe.picture_one} alt="#" />
+            {recipe.picture_two && (
+              <img className="meal" src={recipe.picture_two} alt="#" />
             )}
           </div>
           <h3>Zutaten</h3>
-          {recipe[0].fields.ingredients.content.map((el, i) => {
-            return <p key="i">{el.content[0].value}</p>;
+          {recipe.ingredients.split("\r\n").map((el, i) => {
+            // console.log(el)
+            return <p key={i}>{el}</p>;
           })}
 
           <h3> Zubereitung</h3>
-          <div
-            dangerouslySetInnerHTML={{ __html: recipe[0].fields.instructions }}
-          ></div>
+          {recipe.instructions.split("\r\n").map((el, i) => {
+            return (
+              <div key={i} dangerouslySetInnerHTML={{ __html: el + '<br/>' }}>
+                
+              </div>
+            );
+          })}
         </Container>
       ) : (
         "loading..."
