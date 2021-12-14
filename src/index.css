@@ -1,4 +1,9 @@
 /** @format */
+:root{
+  --color-1: rgba(76, 163, 151, 1);
+  --color-2:rgba(205, 191, 20, 1);
+  --color-3: rgba(0, 212, 255, 1);
+}
 * {
   margin: 0;
   padding: 0;
@@ -32,27 +37,27 @@ code {
 }
 
 #footer {
-	display: flex;
- align-items: center;
- flex-direction: column;
-  background: rgb(76, 163, 151);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--color-1);
   background: -moz-linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1) 0%,
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   background: -webkit-linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1) 0%,
+    var(--color-2)46%,
+    var(--color-3)100%
   );
   background: linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1) 0%,
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4ca397",endColorstr="#00d4ff",GradientType=1);
   margin-top: 1em;
@@ -60,30 +65,30 @@ code {
 
 #header {
   text-align: center;
-  background: rgb(76, 163, 151);
+  background: var(--color-1);
   background: -moz-linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1) 0%,
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   background: -webkit-linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1)0%,
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   background: linear-gradient(
     90deg,
-    rgba(76, 163, 151, 1) 0%,
-    rgba(205, 191, 20, 1) 46%,
-    rgba(0, 212, 255, 1) 100%
+    var(--color-1) 0%,
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4ca397",endColorstr="#00d4ff",GradientType=1);
   font-variant: small-caps;
   padding-bottom: 1em;
   padding-top: 1em;
-}
+  }
 
 .recipeHeader {
   text-align: center;
