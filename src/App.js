@@ -2,6 +2,10 @@
 
 import NavigationDefinition from './Components/NavigationDefinition';
 import './index.css';
+import { useState } from 'react';
+import { Button } from '@mui/material';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 /* *** *** *** *** *** *** *** ***\
 |* In kompetenter Zusammenarbeit *|
@@ -12,9 +16,17 @@ import './index.css';
 \*** *** *** *** *** *** *** *** */
 
 function App() {
+	const [adminLogin, setAdminLogin] = useState();
 	return (
 		<div className='App'>
-			<NavigationDefinition />
+			<header>
+				<Header />
+			</header>
+			{!adminLogin ? <Button>Log in</Button> : <Button>Log out</Button>}
+			<NavigationDefinition adminLogin={adminLogin} />
+			<footer>
+				<Footer />
+			</footer>
 		</div>
 	);
 }
