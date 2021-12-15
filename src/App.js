@@ -36,7 +36,9 @@ function App() {
     const item = e.target;
     // console.log(item.children[1].value)
     await axios
-      .get(`http://localhost:4001/admins/${item.children[1].value}`)
+      .get(
+        `https://kochbuch-backend.herokuapp.com/admins/${item.children[1].value}`
+      )
       .then((res) => setUser(res.data))
       .catch((err) => alert("Username nicht vorhanden"));
     try {
