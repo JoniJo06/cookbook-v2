@@ -2,10 +2,11 @@
 
 import RecipeCard from "./RecipeCard";
 import { useState, useEffect } from "react";
-import { Grid, Box, Container, CircularProgress } from "@mui/material";
+import { Grid, Box, Container, CircularProgress, Button } from "@mui/material";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "./../index.css";
 
@@ -47,6 +48,9 @@ const HomePage = () => {
               )}
             </Grid>
           </Box>
+          <Link style={{textDecoration: 'none'}} to="create-recipe">
+            <Button  variant='contained'>Rezept hinzufügen</Button>
+          </Link>
         </main>
       </Container>
       <footer>

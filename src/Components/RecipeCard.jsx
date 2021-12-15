@@ -13,22 +13,22 @@ export default function MultiActionAreaCard({ recipe }) {
   return (
     <Card sx={{ boxShadow: "none" }}>
       <Link
-      to={"recipes/" + recipe.id}
-      style={{ textDecoration: "none", color: "black", textAlign: "center" }}
+        to={"recipes/" + recipe.id}
+        style={{ textDecoration: "none", color: "black", textAlign: "center" }}
       >
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="160"
-          image={recipe.home_picture}
-          alt={recipe.home_picture_alt}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {recipe.title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="160"
+            image={recipe.home_picture}
+            alt={recipe.home_picture_alt}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {recipe.title}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
       </Link>
     </Card>
   );

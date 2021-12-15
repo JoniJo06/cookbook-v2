@@ -1,7 +1,7 @@
 /** @format */
-:root{
+:root {
   --color-1: rgba(76, 163, 151, 1);
-  --color-2:rgba(205, 191, 20, 1);
+  --color-2: rgba(205, 191, 20, 1);
   --color-3: rgba(0, 212, 255, 1);
 }
 * {
@@ -50,8 +50,8 @@ code {
   background: -webkit-linear-gradient(
     90deg,
     var(--color-1) 0%,
-    var(--color-2)46%,
-    var(--color-3)100%
+    var(--color-2) 46%,
+    var(--color-3) 100%
   );
   background: linear-gradient(
     90deg,
@@ -74,7 +74,7 @@ code {
   );
   background: -webkit-linear-gradient(
     90deg,
-    var(--color-1)0%,
+    var(--color-1) 0%,
     var(--color-2) 46%,
     var(--color-3) 100%
   );
@@ -88,7 +88,7 @@ code {
   font-variant: small-caps;
   padding-bottom: 1em;
   padding-top: 1em;
-  }
+}
 
 .recipeHeader {
   text-align: center;
@@ -113,4 +113,8 @@ h3 {
   display: flex;
   justify-content: space-around;
   margin-top: 1em;
+}
+
+.CreateRecipe {
+  margin-top: 2em;
 }

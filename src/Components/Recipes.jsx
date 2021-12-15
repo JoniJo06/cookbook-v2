@@ -24,7 +24,7 @@ const Recipes = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -41,17 +41,18 @@ const Recipes = () => {
             )}
           </div>
           <h3>Zutaten</h3>
-          {recipe.ingredients.split("\r\n").map((el, i) => {
+          {recipe.ingredients.split("\n").map((el, i) => {
             // console.log(el)
             return <p key={i}>{el}</p>;
           })}
 
           <h3> Zubereitung</h3>
-          {recipe.instructions.split("\r\n").map((el, i) => {
+          {recipe.instructions.split("\n").map((el, i) => {
             return (
-              <div key={i} dangerouslySetInnerHTML={{ __html: el + '<br/>' }}>
-                
-              </div>
+              <div
+                key={i}
+                dangerouslySetInnerHTML={{ __html: el + "<br/>" }}
+              ></div>
             );
           })}
         </Container>
