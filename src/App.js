@@ -23,8 +23,11 @@ function App() {
   const [user, setUser] = useState();
 
   useEffect(() => {}, []);
-
-  const handleLogIn = () => {};
+  const handleLogIn = (e) => {
+    const item = e.target.parentNode;
+    item.children[1].style.opacity = 1;
+    item.children[1].style.pointerEvents = "all";
+  };
   const handleLogOut = () => {
     setAdminLogin(false);
   };
@@ -35,18 +38,18 @@ function App() {
     await axios
       .get(`http://localhost:4001/admins/${item.children[1].value}`)
       .then((res) => setUser(res.data))
-      .catch((err) => console.error(err));
-		try {
-			if (item.children[3].value === user.password) {
-			setAdminLogin(true);
-			item.style.opacity = 0;
-			item.style.pointerEvents = 'none';
-    } 
-		}
-      catch {
-				alert("username oder passwort falsch");
-			}
-    
+      .catch((err) => alert("Username nicht vorhanden"));
+    try {
+      if (item.children[3].value === user.password) {
+        setAdminLogin(true);
+        item.style.opacity = 0;
+        item.style.pointerEvents = "none";
+        item.children[3].value = "";
+				item.children[1].value = "";
+      } else {
+        alert("Passwort falsch");
+      }
+    } catch {}
   };
   return (
     <div className="App">
@@ -59,27 +62,29 @@ function App() {
             Log in
           </Button>
         ) : (
-          <Button variant='contained' onClick={handleLogOut}>Log out</Button>
+          <Button variant="contained" onClick={handleLogOut}>
+            Log out
+          </Button>
         )}
         {adminLogin && (
           <TextField
             id="standard-read-only-input"
-            value=""
+            value={user.username}
             InputProps={{
               readOnly: true,
             }}
             variant="standard"
           />
         )}{" "}
-        <form style={{ opacity: "1" }} id="logInForm" onSubmit={handleSubmit}>
-          <lable>username</lable>
+        <form id="logInForm" onSubmit={handleSubmit}>
+          <lable>Username</lable>
           <input required type="text" />
-          <lable>password</lable>
-          <input required type="text" />
+          <lable>Passwort</lable>
+          <input required type="password" />
           <input value="login" type="submit" />
         </form>
       </div>
-      <NavigationDefinition />
+			<NavigationDefinition adminLogin={ adminLogin}/>
       <footer>
         <Footer />
       </footer>

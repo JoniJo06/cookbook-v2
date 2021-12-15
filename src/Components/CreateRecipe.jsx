@@ -68,7 +68,7 @@ const CreateRecipe = () => {
                 multiline
                 id="ingredients"
                 label="Zutaten"
-                helperText="pro zeile eine ZUTAT"
+                helperText="pro Zeile eine Zutat"
                 value={values[1].value}
               />
               <TextField

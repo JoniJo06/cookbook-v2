@@ -39,7 +39,7 @@ const Recipes = () => {
 						return <p key={i}>{el}</p>;
 					})}
 
-					<h3> Zubereitung</h3>
+					<h3>Zubereitung</h3>
 					{recipe.instructions.split('\n').map((el, i) => {
 						return <div key={i} dangerouslySetInnerHTML={{ __html: el + '<br/>' }}></div>;
 					})}

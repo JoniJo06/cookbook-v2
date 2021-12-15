@@ -5,16 +5,19 @@ import HomePage from "./HomePage";
 import Recipes from "./Recipes";
 import CreateRecipe from "./CreateRecipe";
 
-
-const NavigationDefinition = () => {
-  
+const NavigationDefinition = ({ adminLogin }) => {
   return (
     <div>
-      
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="recipes/:id" element={<Recipes />} />
-        <Route path="create-recipe" element={<CreateRecipe />} />
+        <Route path="/" element={<HomePage adminLogin={adminLogin} />} />
+        <Route
+          path="recipes/:id"
+          element={<Recipes adminLogin={adminLogin} />}
+        />
+        <Route
+          path="create-recipe"
+          element={<CreateRecipe adminLogin={adminLogin} />}
+        />
       </Routes>
     </div>
   );
