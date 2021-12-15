@@ -20,7 +20,7 @@ const CreateRecipe = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4001/recipes", {
+      .post("https://kochbuch-backend.herokuapp.com/recipes", {
         title: values[0].value,
         ingredients: values[1].value,
         instructions: values[2].value,

@@ -36,13 +36,17 @@ function App() {
       .get(`http://localhost:4001/admins/${item.children[1].value}`)
       .then((res) => setUser(res.data))
       .catch((err) => console.error(err));
-    if (item.children[3].value === user.password) {
+		try {
+			if (item.children[3].value === user.password) {
 			setAdminLogin(true);
 			item.style.opacity = 0;
 			item.style.pointerEvents = 'none';
-    } else {
-      alert("username oder passwort falsch");
-    }
+    } 
+		}
+      catch {
+				alert("username oder passwort falsch");
+			}
+    
   };
   return (
     <div className="App">
