@@ -118,3 +118,22 @@ h3 {
 .CreateRecipe {
   margin-top: 2em;
 }
+
+#logInForm {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  opacity: 1;
+  background-color: rgba(20, 20, 20, 0.5);
+  padding: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#loginContainer {
+  display: flex;
+  justify-content:space-between;
+}
