@@ -59,7 +59,7 @@ const Recipes = ({ adminLogin }) => {
               ></div>
             );
           })}
-          <Button
+          {adminLogin && <Button
             onClick={handleDelete}
             color="error"
             variant="contained"
@@ -67,7 +67,7 @@ const Recipes = ({ adminLogin }) => {
             fullWidth
           >
             Delete
-          </Button>
+          </Button>}
         </Container>
       ) : (
         "loading..."
