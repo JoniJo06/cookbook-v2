@@ -46,13 +46,14 @@ function App() {
 				item.style.pointerEvents = 'none';
 				item.children[3].value = '';
 				item.children[1].value = '';
+				setUser({});
 			} else {
 				alert('Passwort falsch');
+				setUser({});
 			}
 		} catch (err) {
 			console.error(err);
-		} finally {
-			setUser();
+			setUser({});
 		}
 	};
 	return (
