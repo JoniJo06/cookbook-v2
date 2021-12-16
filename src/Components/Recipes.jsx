@@ -14,7 +14,11 @@ const Recipes = ({ adminLogin }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await setIsLoading(false);
+      await  axios
+        .get(`https://kochbuch-backend.herokuapp.com/recipes/${id}`)
+        .then((res) => setRecipe(res.data))
+        .catch((err) => console.error(err));
+			setIsLoading(false);
     };
     fetchData();
   }, [id]);
