@@ -52,7 +52,7 @@ function App() {
 		} catch (err) {
 			console.error(err);
 		} finally {
-			setUser({});
+			setUser();
 		}
 	};
 	return (
