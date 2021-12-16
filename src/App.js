@@ -48,9 +48,11 @@ function App() {
 				item.children[1].value = '';
 			} else {
 				alert('Passwort falsch');
+				setUser({});
 			}
 		} catch (err) {
 			console.error(err);
+			setUser({});
 		}
 	};
 	return (
