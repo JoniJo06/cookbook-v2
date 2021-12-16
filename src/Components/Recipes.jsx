@@ -31,7 +31,7 @@ const Recipes = ({ adminLogin }) => {
 		if (input === 'DELETE') {
 			console.log(input);
 			await axios
-				.delete(`http://localhost:4001/recipes/${id}`)
+				.delete(`https://kochbuch-backend.herokuapp.com/recipes/${id}`)
 				.then((res) => alert('rezept wurde gelöscht'))
 				.catch((err) => console.error(err));
 			navigate('/');
